@@ -2,8 +2,8 @@
 
 FlowBoard is a production-grade Kanban board built for the Next Play Games engineering assessment. It uses React 19 + Vite on the frontend, Supabase for PostgreSQL persistence and anonymous authentication, @tanstack/react-query for server-state management, and @dnd-kit for drag-and-drop. Every change—task creation, column moves, edits, comments—is persisted to Supabase in real time, and Row Level Security ensures each anonymous session has a completely isolated board with no shared data between users.
 
-**Live URL:** https://your-deployment.vercel.app  
-**GitHub:** https://github.com/your-username/your-repo
+**Live URL:** https://flowboard-zeta-lilac.vercel.app
+**GitHub:** https://github.com/amogh-reddy21/Flowboard
 
 ---
 
