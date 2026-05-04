@@ -138,7 +138,7 @@ Both values are in **Supabase → Project Settings → API**.
 ```bash
 npm run dev
 ```
-Open `http://localhost:5174`
+Open `http://localhost:5173`
 
 ---
 
