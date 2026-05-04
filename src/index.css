@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/geist";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { font-size: 13px; @apply font-sans; }
+
+  body {
+    margin: 0;
+    background-color: #090B12;
+    color: #F0F2FF;
+    font-family: 'Geist Variable', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+    height: 100vh;
+    @apply bg-background text-foreground;
+  }
+
+  #root {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+  }
+
+  ::-webkit-scrollbar { width: 4px; height: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 2px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+
+  * { scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.12) transparent; }
+  *, *::before, *::after { @apply border-border; }
+
+  :root {
+    --background: #090B12;
+    --foreground: #F0F2FF;
+    --card: #1A1F32;
+    --card-foreground: #F0F2FF;
+    --popover: #1F2538;
+    --popover-foreground: #F0F2FF;
+    --primary: #F59E0B;
+    --primary-foreground: #090B12;
+    --secondary: #1F2538;
+    --secondary-foreground: #F0F2FF;
+    --muted: #1A1F32;
+    --muted-foreground: #8B93B5;
+    --accent: #252A40;
+    --accent-foreground: #F0F2FF;
+    --destructive: #EF4444;
+    --border: rgba(255,255,255,0.08);
+    --input: rgba(255,255,255,0.08);
+    --ring: #F59E0B;
+    --radius: 0.5rem;
+    --sidebar: #0F1221;
+    --sidebar-foreground: #F0F2FF;
+    --sidebar-primary: #F59E0B;
+    --sidebar-primary-foreground: #090B12;
+    --sidebar-accent: #1F2538;
+    --sidebar-accent-foreground: #F0F2FF;
+    --sidebar-border: rgba(255,255,255,0.06);
+    --sidebar-ring: #F59E0B;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-1.5 font-medium rounded transition-all duration-150 cursor-pointer select-none;
+    font-size: 12px;
+  }
+  .btn-primary {
+    @apply btn bg-primary-500 text-[#090B12] hover:bg-primary-400 active:bg-primary-600 px-3 py-1.5 shadow-sm font-semibold;
+  }
+  .btn-secondary {
+    @apply btn bg-elevated text-text-secondary hover:bg-[rgba(255,255,255,0.08)] hover:text-text-primary border border-[rgba(255,255,255,0.08)] px-3 py-1.5;
+  }
+  .btn-ghost {
+    @apply btn text-text-secondary hover:text-text-primary hover:bg-elevated px-2 py-1.5;
+  }
+  .btn-icon {
+    @apply btn text-text-secondary hover:text-text-primary hover:bg-elevated p-1.5 rounded;
+  }
+
+  .input {
+    @apply w-full bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] rounded px-3 py-2 text-text-primary placeholder:text-text-muted
+           focus:outline-none focus:ring-1 focus:ring-primary-500 focus:border-primary-500
+           transition-colors duration-150;
+    font-size: 13px;
+  }
+
+  .card-surface {
+    @apply bg-card border border-[rgba(255,255,255,0.08)] rounded-lg;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1 px-1.5 py-0.5 rounded font-medium font-mono;
+    font-size: 10px;
+  }
+
+  .shimmer-bg {
+    background: linear-gradient(90deg, rgba(255,255,255,0.03) 25%, rgba(255,255,255,0.07) 50%, rgba(255,255,255,0.03) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  .column-drop-active {
+    background-color: rgba(245,158,11,0.04);
+  }
+}
+
+.board-scroll,
+.column-scroll,
+.sidebar-scroll {
+  scrollbar-width: none;
+}
+.board-scroll::-webkit-scrollbar,
+.column-scroll::-webkit-scrollbar,
+.sidebar-scroll::-webkit-scrollbar {
+  display: none;
+}
